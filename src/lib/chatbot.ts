@@ -66,13 +66,7 @@ const intents: Intent[] = [
     keywords: ["project", "built", "portfolio piece", "work you've done", "sdg", "what have you made", "show me your work"],
     respond: () =>
       projects.length
-        ? projects
-            .map((p) =>
-              p.tags?.length
-                ? `• ${p.title} (${p.tags.join(", ")}): ${p.description}`
-                : `• ${p.title}: ${p.description}`
-            )
-            .join("\n")
+        ? projects.map((p) => `• ${p.title}: ${p.description}`).join("\n")
         : "He's currently working on new projects — check back soon!",
   },
   {
