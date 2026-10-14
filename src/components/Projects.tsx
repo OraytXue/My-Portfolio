@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { projects } from "@/lib/profile";
 import { useActiveSection } from "./ActiveSectionProvider";
+import HorizontalScroller from "./HorizontalScroller";
 
 export default function Projects({ className = "" }: { className?: string }) {
   const isActive = useActiveSection() === "projects";
@@ -23,12 +24,11 @@ export default function Projects({ className = "" }: { className?: string }) {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <HorizontalScroller>
         {projects.map((project) => (
-          <a
+          <div
             key={project.title}
-            href={project.link}
-            className="group rounded-xl border border-card-border overflow-hidden flex flex-col hover:border-foreground transition-colors"
+            className="group snap-start shrink-0 w-[260px] sm:w-[300px] rounded-xl border border-card-border overflow-hidden flex flex-col hover:border-foreground transition-colors"
           >
             {project.image && (
               <div className="relative w-full aspect-video bg-very-light-gray overflow-hidden border-b border-card-border">
@@ -36,7 +36,7 @@ export default function Projects({ className = "" }: { className?: string }) {
                   src={project.image}
                   alt={`${project.title} preview`}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="300px"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -44,24 +44,33 @@ export default function Projects({ className = "" }: { className?: string }) {
 
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="font-mono text-base mb-2 group-hover:underline">
-                  {project.title}
-                </h3>
+                <h3 className="font-mono text-base mb-2">{project.title}</h3>
                 <p className="text-sm text-foreground/80 leading-relaxed">
                   {project.description}
                 </p>
               </div>
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-mono text-foreground border border-card-border rounded-lg px-3 py-1.5 w-fit hover:border-foreground transition-colors"
+                >
+                  Visit Project
+                </a>
+              )}
             </div>
-          </a>
+          </div>
         ))}
 
-        <div className="rounded-xl border border-dashed border-card-border p-5 flex flex-col items-start justify-center gap-2 text-muted min-h-[220px]">
+        <div className="snap-start shrink-0 w-[260px] sm:w-[300px] rounded-xl border border-dashed border-card-border p-5 flex flex-col items-start justify-center gap-2 text-muted min-h-[220px]">
           <p className="font-mono text-sm">More on the way</p>
           <p className="text-xs leading-relaxed">
             New projects are currently in progress — check back soon.
           </p>
         </div>
-      </div>
+      </HorizontalScroller>
     </section>
   );
 }

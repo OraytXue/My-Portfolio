@@ -5,16 +5,16 @@ import {
   SiTypescript,
   SiPhp,
   SiReact,
+  SiNextdotjs,
   SiNodedotjs,
-  SiExpress,
   SiTailwindcss,
+  SiPostgresql,
   SiMysql,
   SiGit,
   SiGithub,
   SiFigma,
   SiVercel,
 } from "react-icons/si";
-import { Code2 } from "lucide-react";
 import type { IconType } from "react-icons";
 
 export const skillIcons: Record<string, IconType> = {
@@ -24,13 +24,13 @@ export const skillIcons: Record<string, IconType> = {
   TypeScript: SiTypescript,
   PHP: SiPhp,
   React: SiReact,
+  "Next.js": SiNextdotjs,
   "Node.js": SiNodedotjs,
-  "Express.js": SiExpress,
   "Tailwind CSS": SiTailwindcss,
+  PostgreSQL: SiPostgresql,
   MySQL: SiMysql,
   Git: SiGit,
   GitHub: SiGithub,
-  "VS Code": Code2, // no official simple-icons export available
   Figma: SiFigma,
   Vercel: SiVercel,
 };

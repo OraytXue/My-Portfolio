@@ -1,5 +1,3 @@
-import { db } from "@/db";
-import { sql } from "drizzle-orm";
 import Navbar from "@/components/Navbar";
 import ProfileHeader from "@/components/ProfileHeader";
 import About from "@/components/About";
@@ -13,11 +11,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import { ActiveSectionProvider } from "@/components/ActiveSectionProvider";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  await db.execute(sql`select 1`);
-
+export default function Home() {
   return (
     <ActiveSectionProvider>
       <Navbar />

@@ -1,8 +1,3 @@
-// Keep the schema entrypoint present so models can define tables and run
-// `npx drizzle-kit push` without bootstrapping Drizzle config first.
-export {};
-
-
 import { pgTable, serial, text, timestamp, integer } from "drizzle-orm/pg-core";
 
 export const visitorStats = pgTable("visitor_stats", {

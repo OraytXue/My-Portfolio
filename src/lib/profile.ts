@@ -28,13 +28,13 @@ export const skills = [
   "TypeScript",
   "PHP",
   "React",
+  "Next.js",
   "Node.js",
-  "Express.js",
   "Tailwind CSS",
+  "PostgreSQL",
   "MySQL",
   "Git",
   "GitHub",
-  "VS Code",
   "Figma",
   "Vercel",
 ];
@@ -68,8 +68,7 @@ export const projects = [
     title: "SDGPhilCST",
     description: "Campus sustainability awareness.",
     image: "/images/sdg.png",
-    link: "#",
-    tags: ["React", "Tailwind CSS", "Node.js"],
+    link: "https://sdgphilcst.great-site.net/",
   },
 ];
 
