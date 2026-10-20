@@ -16,7 +16,7 @@ export const profile = {
   education: "Bachelor of Science in Information Technology (BSIT) graduate.",
   stats: [
     { label: "Internship", value: "1+" },
-    { label: "Project", value: "1+" },
+    { label: "Projects", value: "2+" },
     { label: "Certification", value: "1" },
   ],
 };
@@ -64,6 +64,12 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    title: "H&M Steel and Glass Works",
+    description: "Inventory System",
+    image: "/images/hm-steel-glass.png",
+    link: "https://hmsteelandglassworks.vercel.app",
+  },
   {
     title: "SDGPhilCST",
     description: "Campus sustainability awareness.",

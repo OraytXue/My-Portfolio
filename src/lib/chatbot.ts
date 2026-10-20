@@ -63,7 +63,20 @@ const intents: Intent[] = [
   },
   {
     name: "projects",
-    keywords: ["project", "built", "portfolio piece", "work you've done", "sdg", "what have you made", "show me your work"],
+    keywords: [
+      "project",
+      "built",
+      "portfolio piece",
+      "work you've done",
+      "sdg",
+      "h&m",
+      "hm",
+      "steel",
+      "glass",
+      "inventory",
+      "what have you made",
+      "show me your work",
+    ],
     respond: () =>
       projects.length
         ? projects.map((p) => `• ${p.title}: ${p.description}`).join("\n")
