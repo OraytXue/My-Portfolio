@@ -19,7 +19,7 @@ export default function Hero() {
         </p>
 
         <p className="text-foreground/80 max-w-xl leading-relaxed mb-10">
-          I'm a fresh IT graduate and aspiring web developer passionate about
+          I&apos;m a fresh IT graduate and aspiring web developer passionate about
           building clean, functional, and user-friendly web applications.
           Currently seeking opportunities to grow my skills and contribute
           to meaningful projects.
